@@ -1,0 +1,42 @@
+.mdl-layout__content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.color-state > img {
+  height: 20px;
+}
+
+.connection-state {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.connection-state > img {
+  height: 25px;
+}
+
+.demo-card-square.mdl-card {
+  height: 200px;
+  width: 300px;
+}
+
+.demo-card-square > .mdl-card__title {
+  background-color: #00afd8;
+  color: #fff;
+  text-shadow: 1px 1px 1px #444;
+}
+
+.leaf-img {
+  height: 20px;
+  position: relative;
+  top: -3px;
+}
+
+.mdl-layout__header-row {
+  padding: 0 20px 0 20px;
+}
+
+.mdl-typography--display-3 {
+  color: #757575;
+  width: 100%;
+}

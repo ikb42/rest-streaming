@@ -1,6 +1,6 @@
 # Nest REST Streaming API Sample
 
-Sample app showcasing Nest's REST Streaming API
+Sample app showcasing Nest's REST Streaming API using Node.js
 
 ## Install
 
@@ -55,3 +55,4 @@ Licensed under the Apache 2.0 license. See the [LICENSE file][license] for detai
 [nest-sim]: https://developer.nest.com/documentation/cloud/home-simulator/
 [bugs]: #
 [license]: LICENSE
+[contributing]: CONTRIBUTING.md

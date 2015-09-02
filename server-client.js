@@ -49,6 +49,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'third_party')));
 
 /**
  * Listen for calls and redirect the user to the Nest OAuth

@@ -58,9 +58,10 @@
             {{/if}}
             {{if has_fan}}
               <span>&bull;</span>
-              <b>Fan:</b> {{:hvac_state}}
               {{if fan_timer_active}}
-                &nbsp;ending on {{timeout:fan_timer_timeout}}
+                <b>Fan:</b> On ending on {{timeout:fan_timer_timeout}}
+              {{else}}
+                <b>Fan:</b> Off
               {{/if}}
             {{/if}}
           </div>

@@ -12,6 +12,14 @@ npm install
 
 Log in to https://developer.nest.com/clients
 
+Create a client using the following permissions:
+- Away read v1
+- Camera read v1
+- Camera read + images v1
+  - Note: Images are only available with a [Nest Aware][nest-aware] subscription.
+- Smoke+CO alarm read v3
+- Thermostat read v3
+
 Set your client redirect URI to be `http://localhost:3000/auth/nest/callback`
 
 Set up your Nest credentials in your environment variables:
@@ -52,6 +60,7 @@ We love contributions! :smile: Please follow the steps in the [CONTRIBUTING guid
 
 Licensed under the Apache 2.0 license. See the [LICENSE file][license] for details.
 
+[nest-aware]: https://nest.com/support/article/What-do-I-get-with-Nest-Aware-for-Nest-Cam
 [nest-sim]: https://developer.nest.com/documentation/cloud/home-simulator/
 [bugs]: #
 [license]: LICENSE

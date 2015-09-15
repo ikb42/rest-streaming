@@ -26,6 +26,11 @@
   text-shadow: 1px 1px 1px #444;
 }
 
+.home-away {
+  left: 3px;
+  position: relative;
+}
+
 .leaf-img {
   height: 20px;
   position: relative;

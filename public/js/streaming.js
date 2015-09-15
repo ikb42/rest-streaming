@@ -60,6 +60,7 @@ source.addEventListener('put', function(e) {
 
     return {
       name: structures[id].name,
+      away: structures[id].away,
       thermostats: thermostatIds.map(function(id) { return thermostats[id]; }),
       smokeAlarms: smokeAlarmIds.map(function(id) { return smokeAlarms[id]; }),
       cameras: cameraIds.map(function(id) { return cameras[id]; })

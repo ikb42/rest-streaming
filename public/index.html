@@ -20,6 +20,18 @@
   </head>
   <body>
 
+    <!-- Template converter for Fan timeout -->
+    <script type="text/javascript">
+      $.views.converters('timeout', function(val) {
+        var options = {
+          weekday: 'long', year: 'numeric', month: 'short',
+          day: 'numeric', hour: '2-digit', minute: '2-digit'
+        };
+        // Example output: Friday, Feb 1, 2013 6:00 AM
+        return new Date(val).toLocaleDateString('en-US', options);
+      });
+    </script>
+
     <!-- Template for rendering Nest Thermostat state -->
     <script id="thermTemplate" type="text/x-jsrender">
       <div class="mdl-cell mdl-cell--4-col">
@@ -43,6 +55,13 @@
                 &bull;
               </span>
               <img src="/img/nest-leaf.png" class="leaf-img">
+            {{/if}}
+            {{if has_fan}}
+              <span>&bull;</span>
+              <b>Fan:</b> {{:hvac_state}}
+              {{if fan_timer_active}}
+                &nbsp;ending on {{timeout:fan_timer_timeout}}
+              {{/if}}
             {{/if}}
           </div>
         </div>
@@ -112,7 +131,10 @@
     <!-- Template for rendering each structure (and all devices) -->
     <script id="structureTemplate" type="text/x-jsrender">
       <div class="demo-grid-1 mdl-grid">
-        <h2 class="mdl-typography--display-3">{{:name}}</h2>
+        <h2 class="mdl-typography--display-3">
+          {{:name}}
+          <div class="typo-styles__demo mdl-typography--title home-away">Home/Away: {{:away}}</div>
+        </h2>
         <br>
         {{for thermostats tmpl="#thermTemplate" /}}
         {{for smokeAlarms tmpl="#smokeTemplate" /}}

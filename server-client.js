@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 var http = require('http');
+var https = require('https');
 var path = require('path');
 
 var express = require('express');
@@ -88,13 +89,37 @@ app.get('/auth/nest/callback', passport.authenticate('nest', passportOptions),
  * an error requesting they try the request again.
  */
 app.get('/auth/failure', function(req, res) {
+  console.log('Authentication failed. Status code: ' + res.statusCode);
   res.send('Authentication failed. Please try again.');
 });
 
+/**
+ * When the user requests to log out, deauthorize their token using the Nest
+ * deauthorization API then destroy their local session and cookies.
+ * See https://goo.gl/f2kfmv for more information.
+ */
 app.get('/auth/logout', function(req, res) {
-  req.session.destroy();
-  res.clearCookie('nest_token');
-  res.redirect('/');
+  var token = req.cookies['nest_token'];
+  if (token) {
+    var reqOpts = {
+      hostname: 'api.home.nest.com',
+      path: '/oauth2/access_tokens/' + token,
+      method: 'DELETE'
+    };
+
+    https.request(reqOpts, function(revokeRes) {
+      console.log('Log out successful.');
+      req.session.destroy();
+      res.clearCookie('nest_token');
+      res.redirect('/');
+    }).on('error', function() {
+      console.log('An error occurred attempting to revoke token.');
+      res.send('Log out failed. Please try again.');
+    }).end();
+  } else {
+    console.log('Not signed in.');
+    res.redirect('/');
+  }
 });
 
 /**

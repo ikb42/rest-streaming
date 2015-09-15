@@ -13,12 +13,14 @@ npm install
 Log in to https://developer.nest.com/clients
 
 Create a client using the following permissions:
+
 - Away read v1
 - Camera read v1
-- Camera read + images v1
-  - Note: Images are only available with a [Nest Aware][nest-aware] subscription.
+- Camera read + images v1*
 - Smoke+CO alarm read v3
 - Thermostat read v3
+
+***Note: Images are only available with a [Nest Aware][nest-aware] subscription.**
 
 Set your client redirect URI to be `http://localhost:3000/auth/nest/callback`
 

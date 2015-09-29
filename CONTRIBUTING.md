@@ -1,9 +1,16 @@
 # Contributing
 
-Before making any contributions, please sign one of the contributor
-license agreements below.
+We really love contributions! Simply follow these three steps to contribute:
 
-Fork the repo, develop and test your code changes.
+1. Sign one of the Contributor License Agreements below.
+2. Fork the repo, develop, and test your changes.
+3. Submit a pull request to the repo with your changes.
+
+We will review your change and if it all looks good, your change will be merged.
+If it appears your change needs additional work, we will let you know with
+useful comments so you can adjust your pull request accordingly.
+
+## Development
 
 Install all dependencies including development requirements by running:
 
@@ -14,27 +21,23 @@ $ npm install -d
 Your code should honor the [Google JavaScript Style Guide][js-guide].
 You can use [Closure Linter][c-linter] to detect style issues.
 
-Submit a pull request. The repo owner will review your request. If it is
-approved, the change will be merged. If it needs additional work, the repo
-owner will respond with useful comments.
-
 ## Contributor License Agreements
 
 Before creating a pull request, please fill out either the individual or
 corporate Contributor License Agreement.
 
-* If you are an individual writing original source code and you're sure you
-own the intellectual property, then you'll need to sign an
+- **Individual:** If you are an individual writing original source code and
+you're sure you own the intellectual property, then you'll need to sign the
 [individual CLA][indv-cla].
-* If you work for a company that wants to allow you to contribute your work
-to this client library, then you'll need to sign a
+- **Corporate:** If you work for a company that wants to allow you to contribute
+your work to this client library, then you'll need to sign the
 [corporate CLA][corp-cla].
 
 Follow either of the two links above to access the appropriate CLA and
 instructions for how to sign and return it. Once we receive it, we'll add you
-to the official list of contributors and be able to accept your patches.
+to the official list of contributors and be able to accept your changes.
 
 [js-guide]: https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
 [c-linter]: https://code.google.com/p/closure-linter/
-[indv-cla]: https://developers.google.com/open-source/cla/individual
-[corp-cla]: https://developers.google.com/open-source/cla/corporate
+[indv-cla]: https://cla.developers.google.com/about/google-individual
+[corp-cla]: https://cla.developers.google.com/about/google-corporate

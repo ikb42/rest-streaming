@@ -20,7 +20,7 @@ Create a client using the following permissions:
 - Smoke+CO alarm read v3
 - Thermostat read v3
 
-***Note: Images are only available with a [Nest Aware][nest-aware] subscription.**
+**Note: Images are only available with a [Nest Aware][nest-aware] subscription.*
 
 Set your client redirect URI to be `http://localhost:3000/auth/nest/callback`
 
@@ -39,7 +39,7 @@ Start the server:
 npm start
 ```
 
-Open your browser to http://localhost:3000
+Open your browser to [http://localhost:3000](http://localhost:3000)
 
 ### Server Only Mode
 
@@ -56,14 +56,14 @@ The events will then be logged to the node console rather than displayed in a br
 
 ## Contributing
 
-We love contributions! :smile: Please follow the steps in the [CONTRIBUTING guide][contributing] to get started. If you found a bug, please file it [here][bugs].
+We love contributions! :smile: Please follow the steps in [CONTRIBUTING][contributing] to get started. If you found a bug, please file it [here][bugs].
 
 ## License
 
-Licensed under the Apache 2.0 license. See the [LICENSE file][license] for details.
+Licensed under the Apache 2.0 license. See [LICENSE][license] for details.
 
 [nest-aware]: https://nest.com/support/article/What-do-I-get-with-Nest-Aware-for-Nest-Cam
 [nest-sim]: https://developer.nest.com/documentation/cloud/home-simulator/
-[bugs]: #
+[bugs]: https://github.com/nestlabs/rest-streaming/issues
 [license]: LICENSE
 [contributing]: CONTRIBUTING.md

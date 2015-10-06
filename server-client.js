@@ -16,6 +16,8 @@
 var http = require('http');
 var https = require('https');
 var path = require('path');
+var fs = require('fs');
+
 
 var express = require('express');
 var cookieParser = require('cookie-parser');
@@ -33,6 +35,25 @@ var SUPER_SECRET_KEY = 'keyboard-cat';
 var passportOptions = {
   failureRedirect: '/auth/failure', // Redirect to another page on failure.
 };
+
+var options;
+var certsPath = path.join(__dirname, 'certs', 'server');
+var caCertsPath = path.join(__dirname, 'certs', 'ca');
+
+//
+// SSL Certificates
+//
+options = {
+  key: fs.readFileSync(path.join(certsPath, 'my-server.key.pem'))
+  // This certificate should be a bundle containing your server certificate and any intermediates
+  // cat certs/cert.pem certs/chain.pem > certs/server-bundle.pem
+, cert: fs.readFileSync(path.join(certsPath, 'my-server.crt.pem'))
+  // ca only needs to be specified for peer-certificates
+//, ca: [ fs.readFileSync(path.join(caCertsPath, 'my-root-ca.crt.pem')) ]
+, requestCert: false
+, rejectUnauthorized: true
+};
+
 
 passport.use(new NestStrategy({
   // Read credentials from your environment variables.
@@ -131,11 +152,11 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-var server = http.createServer(app);
+var server = https.createServer(options, app);
 
 server.on('listening', function() {
   console.log('Listening on port ' + server.address().port);
-  openurl.open('http://localhost:' + port);
+  openurl.open('https://localhost:' + port);
 });
 
 /**
